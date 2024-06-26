@@ -1,0 +1,42 @@
+.general__laboratory {
+    height: 100vh;
+    width: 80%;
+    margin: 80px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .laboratory__lab {
+    min-height: 99%;
+    min-width: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    border-radius: 12px;
+  }
+  
+  .lab__box {
+    position: relative;
+    width: 180px;
+    height: 270px;
+    transform-style: preserve-3d;
+    animation: animate 20s linear infinite;
+    border-radius: 10px;
+    z-index: 4;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(1000px) rotateY(360deg);
+    }
+  }
+  
+  .lab__box:hover {
+    animation-play-state: paused;
+  }
+  
