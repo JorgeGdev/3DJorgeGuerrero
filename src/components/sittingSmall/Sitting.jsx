@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
-import { useLoader, useFrame } from '@react-three/fiber';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { useFrame } from '@react-three/fiber';
+import { useGLTF } from '@react-three/drei';
 import { AnimationMixer } from 'three';
 
 export default function Sitting() {
-  const sittingSmall = useLoader(GLTFLoader, '../models/sentado.glb');
+  const sittingSmall = useGLTF('../models/sentado.glb');
 
   const mixer = useRef(null);
 

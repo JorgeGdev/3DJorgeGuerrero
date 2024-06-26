@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
-import { useLoader, useFrame } from '@react-three/fiber';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { useFrame } from '@react-three/fiber';
+import { useGLTF } from '@react-three/drei';
 import { AnimationMixer } from 'three';
 
 export default function Walking() {
-  const modelWalking = useLoader(GLTFLoader, '../models/walking.glb');
+  const modelWalking = useGLTF('../models/walking.glb');
   const mixer = useRef(null);
 
   useEffect(() => {
