@@ -15,6 +15,7 @@ const Desk = forwardRef(({ triggerTextAnimation }, ref) => {
   // Referencias para los textos
   const nameTextRef = useRef();
   const titleTextRef = useRef();
+  const arrowTextRef = useRef()
 
   useEffect(() => {
     if (animations.length) {
@@ -77,6 +78,21 @@ const Desk = forwardRef(({ triggerTextAnimation }, ref) => {
           Web Developer
         </Text>
       </Float>
+      
+        <Text
+          ref={arrowTextRef}
+          font="./AtQuark2.woff"
+          position={[-19, textPositionY - 5.5, 3]}
+          fontSize={0.3}
+          rotation-y={-Math.PI / 2.25}
+          color="#70A1D5"
+          anchorX="center"
+          anchorY="middle"
+        >
+          Scroll for more
+          🡇
+        </Text>
+      
     </>
   );
 });

@@ -6,8 +6,8 @@ const cardsData = [
   { videoSrc: 'assets/videos/video2.mp4', title: 'Portfolio 3D ', link: 'https://portfoliojorgegdev.vercel.app/' },
   { videoSrc: 'assets/videos/video3.mp4', title: 'Earth 3D', link: 'https://earth3d-neon.vercel.app/' },
   { videoSrc: 'assets/videos/video4.mp4', title: 'Particles Cursor', link: 'https://particlescursoranimation.vercel.app/' },
-  { videoSrc: 'assets/videos/video5.mp4', title: 'wobbly-sphere', link: 'https://monkeyinspace.vercel.app/' },
-  { videoSrc: 'assets/videos/video6.mp4', title: 'Post-Process', link: 'https://r2d2threejs.vercel.app/' },
+  { videoSrc: 'assets/videos/video5.mp4', title: 'Wobbly-Sphere', link: 'https://monkeyinspace.vercel.app/' },
+  { videoSrc: 'assets/videos/video6.mp4', title: 'Children`s Book', link: 'https://book-antonia-3d.vercel.app/' },
   { videoSrc: 'assets/videos/video7.mp4', title: 'Horror 3D', link: 'https://horrorexperiencethreejs.vercel.app/' },
   { videoSrc: 'assets/videos/video8.mp4', title: 'Magic Portal 3D', link: 'https://magicportalthreejs.vercel.app/' },
 ];

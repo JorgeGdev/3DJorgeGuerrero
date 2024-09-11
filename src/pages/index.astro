@@ -14,6 +14,8 @@ import PortfolioPreview from '../components/PortfolioPreview.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import MainModel from '../components/dancingModel/MainModel.jsx'
 import CarouselContainer from '../components/carrousel/CarouselContainer.jsx'
+import TechModel from '../components/technologies/TechModel';
+import BubblesModel from '../components/bubbles/BubblesModel';
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -28,7 +30,7 @@ const projects = (await getCollection('work'))
 	<div class="stack gap-20 lg:gap-48">
 		
 			<header class="hero">
-				<MainModel client:load />
+				<MainModel client:visible />
 			</header>
 		<main class="wrapper stack gap-20 lg:gap-48">
 
@@ -76,6 +78,18 @@ const projects = (await getCollection('work'))
 
 			</section>
 
+			<section  class="tool_box">
+				<header class="tool_box_box">
+					<h3 class="tool_box_h3">My Tool Box</h3>
+					<p class="tool_box_p">My toolbox is filled with technologies that allow me to transform ideas into interactive and immersive experiences. I work with JavaScript and Python to bring the logic behind each project to life, while React and Three.js enable me to create dynamic interfaces and 3D worlds that capture the imagination. Blender is where models take shape, and with HTML and CSS, I give everything style and structure. I also use GitHub to manage and share my code with the community.</p>
+				</header>
+
+				<div class="carousel">
+					<BubblesModel client:load />
+				</div>
+
+			</section>
+
 
 			<section  class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
@@ -103,6 +117,20 @@ const projects = (await getCollection('work'))
 				</div>
 			</section>
 
+
+
+			<section  class="goodbye">
+				<header class="goodbye_box">
+					<h3 class="goodbye_h3">PASSIONATE ABOUT CODE</h3>
+					<p class="goodbye_p">It's not just about writing code; it's about creating worlds where people can lose themselves, interact, and enjoy. My goal is to keep learning and expanding my skills to build even more immersive and unique experiences that not only solve problems but also ignite the imagination and curiosity of those who experience them. Technology is my canvas, and every new challenge is an opportunity to paint something unforgettable.</p>
+				</header>
+
+				<div class="carousel">
+					<TechModel client:visible />
+				</div>
+
+			</section>
+
 			
 		</main>
 
@@ -112,72 +140,81 @@ const projects = (await getCollection('work'))
 
 <style>
 
-.hero{
-	margin-left: 6rem;
-
-}
-
-		
-
+	.hero{
+		margin-left: 6rem;
+	}
+	
 	#headerAbout{
 		display: flex;
 		flex-direction: row;
 		max-width: 100ch;
-
 	}
-
+	
 	.aboutTitle{
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		padding: 0, 3rem;
 	}
-	
+		
 	.aboutContent{
-
 		width: 80%;
 		text-align: left;
 		padding: 3rem, 0;
-		
-
-
 	}
-
-	.carousel{
+	
+	.carousel, .goodbye, .tool_box {
 		height: 100vh;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-
 	}
-
 	
-
-
-
+	.goodbye_box, .tool_box_box{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		font-family: 'SuperAero', sans-serif;
+	}
+	
+	.goodbye_h3, .tool_box_h3{
+		font-size: 3.5rem; /* Ajuste de tamaño para consistencia */
+		font-family: 'SuperAero', sans-serif; /* Asegurar el mismo tipo de letra */
+		margin-bottom: 2rem; /* Ajuste del margen inferior */
+		text-align: center;
+		color: var(--gray-100); /* Para mantener coherencia de color */
+	}
+	
+	.goodbye_p, .tool_box_p{
+		margin: 1.5rem 2rem; /* Ajuste para uniformidad */
+		font-size: 1.25rem; /* Asegurar el mismo tamaño para los párrafos */
+		line-height: 1.6;
+		text-align: center;
+		color: var(--gray-300); /* Color consistente */
+	}
+	
 	@media (width < 50em) {
-
 		#headerAbout{
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 		}
-
+	
 		.aboutTitle{
 			margin-bottom: 3rem;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 		}
-
+	
 		.aboutContent{
-
 			margin-top: 3rem;
 		}
-
+	
 		.hero{
 			height: 80vh;
 			width: 90%;
@@ -185,79 +222,90 @@ const projects = (await getCollection('work'))
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			margin-left: 2rem
-
+			margin-left: 2rem;
 		}
-
+	
 		.section-header h3 {
-		margin-top: 5em;
-		
+			margin-top: 5em;
+		}
+	
+		/* Ajustes para tool_box y goodbye */
+		.tool_box, .goodbye {
+			height: auto;
+			width: 100%; /* El ancho es del 100% para modelos */
+			padding: 2rem;
+			margin: 1rem 0;
+		}
+	
+		.goodbye_box, .tool_box_box {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+	
+		.goodbye_h3, .tool_box_h3 {
+			font-size: 1.75rem; /* Tamaño ligeramente reducido para pantallas pequeñas */
+			margin-bottom: 1.5rem;
+		}
+	
+		.goodbye_p, .tool_box_p {
+			font-size: 1rem;
+			margin: 1rem 1rem; /* Márgenes laterales pequeñas */
+			line-height: 1.5;
+		}
+	
+		.tool_box_box, .goodbye_box {
+			width: 100%;
+			padding: 0;
+		}
 	}
-
-		
-
-
-
-		
-	}
-
-
-
-
-
-
-
+	
 	.hero {
 		height: 80vh;
 		width: 90%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		
 	}
-
+	
 	.roles {
 		display: none;
 	}
-
 	
-
 	@media (min-width: 50em) {
 		.hero {
 			display: table-column;
 			width: 90%;
-			margin-left: 4rem
-			
+			margin-left: 4rem;
 		}
-
+	
 		.roles {
 			margin-top: 0.5rem;
 			display: flex;
 			gap: 0.5rem;
 		}
-
+	
 		.hero img {
 			aspect-ratio: 3 / 4;
 			border-radius: 4.5rem;
 			object-fit: cover;
 		}
-		
 	}
-
+	
 	/* ====================================================== */
-
+	
 	.section {
 		display: grid;
 		gap: 2rem;
 	}
-
+	
 	.with-background {
 		position: relative;
 	}
-
+	
 	.with-background::before {
 		--hero-bg: var(--bg-image-subtle-2);
-
 		content: '';
 		position: absolute;
 		pointer-events: none;
@@ -266,70 +314,67 @@ const projects = (await getCollection('work'))
 		aspect-ratio: calc(2.25 / var(--bg-scale));
 		top: 0;
 		transform: translateY(-75%) translateX(-50%);
-		background:
-			url('/assets/backgrounds/noise.png') top center/220px repeat,
+		background: url('/assets/backgrounds/noise.png') top center/220px repeat,
 			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
 			var(--gray-999);
 		background-blend-mode: overlay, normal, normal, normal;
 		mix-blend-mode: var(--bg-blend-mode);
 		z-index: -1;
 	}
-
+	
 	.with-background.bg-variant::before {
 		--hero-bg: var(--bg-image-subtle-1);
 	}
-
+	
 	.section-header {
 		justify-self: center;
 		text-align: center;
 		max-width: 50ch;
 		font-size: var(--text-md);
 		color: var(--gray-300);
-		
 	}
-
+	
 	.section-header h3 {
 		font-size: var(--text-2xl);
-		
 	}
-
+	
 	@media (min-width: 50em) {
 		.section {
 			grid-template-columns: repeat(4, 1fr);
 			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
 			gap: 5rem;
 		}
-
+	
 		.section.with-cta {
 			grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
 		}
-
+	
 		.section-header {
 			grid-area: header;
 			font-size: var(--text-lg);
 			margin-top: 3em;
 		}
-
+	
 		.section-header h3 {
 			font-size: var(--text-4xl);
 		}
-
+	
 		.with-cta .section-header {
 			justify-self: flex-start;
 			text-align: left;
 		}
-
+	
 		.gallery {
 			grid-area: gallery;
 		}
-
+	
 		.cta {
 			grid-area: cta;
 		}
 	}
-
+	
 	/* ====================================================== */
-
+	
 	.mention-card {
 		display: flex;
 		height: 7rem;
@@ -342,13 +387,14 @@ const projects = (await getCollection('work'))
 		background: var(--gradient-subtle);
 		box-shadow: var(--shadow-sm);
 	}
-
+	
 	@media (min-width: 50em) {
 		.mention-card {
 			border-radius: 1.5rem;
 			height: 9.5rem;
 		}
-
-		
 	}
-</style>
+	
+	</style>
+	
+	
