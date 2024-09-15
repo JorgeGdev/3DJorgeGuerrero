@@ -74,6 +74,8 @@ const Desk = forwardRef(({ triggerTextAnimation }, ref) => {
           color="#70A1D5"
           anchorX="center"
           anchorY="middle"
+          
+          
         >
           Web Developer
         </Text>
