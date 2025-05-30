@@ -2,7 +2,7 @@
 title: Medical Laboratory Portfolio
 subtitle: Portfolio CSS & JS
 publishDate: 2019-10-02 00:00:00
-img: /assets/stock-4.png
+img: /assets/stock-4.jpg
 img_alt: https://portfolio-diana-alba.vercel.app/.
 description: |
   This project stands as a testament to the power of minimalist design in creating impactful, user-friendly web experiences.

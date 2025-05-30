@@ -2,7 +2,7 @@
 title: Maori Sacred Places
 subtitle: Maori Sacred Places
 publishDate: 2020-03-04 00:00:00
-img: /assets/stock-3.png
+img: /assets/stock-3.jpg
 img_alt: https://maorisacredplaces.vercel.app/
 description: |
  Over 170 places you need to visit

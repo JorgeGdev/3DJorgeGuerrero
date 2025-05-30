@@ -1,4 +1,3 @@
-import { useThree } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import Bubbles from "./Bubbles";
 import BubblesGroup from "./BubblesGroup";
@@ -7,7 +6,7 @@ import { RigidBody } from "@react-three/rapier";
 import Caja from "./Caja";
 
 export default function BubblesExperience() {
-  const { scene } = useThree();
+  
 
   const [bubbleScene, setBubbleScene] = useState(null);
 

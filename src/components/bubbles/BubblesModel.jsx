@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import BubblesExperience from "./BubblesExperience.jsx";
 import { Physics } from "@react-three/rapier";
 import { Suspense } from "react";
-import { Loader } from "@react-three/drei";
+
 
 export default function BubblesModel() {
   return (

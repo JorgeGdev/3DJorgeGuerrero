@@ -2,7 +2,7 @@
 title: Mothers Day 2024
 subtitle: Mothers Day 2024
 publishDate: 2019-12-01 00:00:00
-img: /assets/stock-2.png
+img: /assets/stock-2.jpg
 img_alt: https://mothersday20243d.vercel.app/
 description: |
   This website is a special dedication to mothers around the world
